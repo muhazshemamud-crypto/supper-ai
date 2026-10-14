@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Supper AI assistant for writing, translation, learning, coding and image questions.">
+  <title>Supper AI</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="logo">S</div><div><b>Supper AI</b><small>Smart assistant</small></div></div>
+      <button class="new-chat" id="newChat">＋ <span data-en="New chat" data-om="Haasawa haaraa">New chat</span></button>
+      <div class="side-label" data-en="TOOLS" data-om="MEeshaalee">TOOLS</div>
+      <button class="tool active" data-mode="chat">✦ <span data-en="AI Chat" data-om="AI waliin haasa'i">AI Chat</span></button>
+      <button class="tool" data-mode="write">✎ <span data-en="Writing" data-om="Barreeffama">Writing</span></button>
+      <button class="tool" data-mode="translate">文 <span data-en="Translation" data-om="Hiikkaa">Translation</span></button>
+      <button class="tool" data-mode="code">&lt;/&gt; <span data-en="Coding help" data-om="Gargaarsa koodii">Coding help</span></button>
+      <button class="tool" data-mode="image">▧ <span data-en="Create image" data-om="Suuraa uumi">Create image</span></button>
+      <button class="tool" data-mode="vision">◉ <span data-en="Ask about image" data-om="Waa'ee suuraa gaafadhu">Ask about image</span></button>
+      <button class="tool" data-mode="voice">♬ <span data-en="Voice tools" data-om="Meeshaalee sagalee">Voice tools</span></button>
+      <div class="sidebar-bottom">
+        <label class="language-label" for="language" data-en="Language" data-om="Afaan">Language</label>
+        <select id="language"><option value="en">English</option><option value="om">Afaan Oromoo</option></select>
+        <div class="secure-note">🔒 <span data-en="Your API key stays on the server" data-om="Furtuun API kee server irratti qofa hafa">Your API key stays on the server</span></div>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+        <div class="top-title">Supper AI <span class="status-dot"></span></div>
+        <button id="clearChat" class="icon-btn" title="Clear chat">↻</button>
+      </header>
+      <section class="chat" id="chat">
+        <div class="welcome" id="welcome">
+          <div class="welcome-mark">✦</div>
+          <h1 data-en="What can I help you with?" data-om="Maal irratti si gargaaruu danda'a?">What can I help you with?</h1>
+          <p data-en="Ask a question, write something, translate, or get help with code." data-om="Gaaffii gaafadhu, waan barreessi, hiiki, yookaan koodii irratti gargaarsa argadhu.">Ask a question, write something, translate, or get help with code.</p>
+          <div class="suggestions">
+            <button data-prompt="Explain photosynthesis in simple words">🌱 <span data-en="Explain a topic" data-om="Mata-duree ibsi">Explain a topic</span></button>
+            <button data-prompt="Translate this into Afaan Oromoo: How are you today?">文 <span data-en="Translate a sentence" data-om="Hima hiiki">Translate a sentence</span></button>
+            <button data-prompt="Help me write a professional application letter">✎ <span data-en="Write a letter" data-om="Xalayaa barreessi">Write a letter</span></button>
+            <button data-prompt="Help me debug this code:">⌘ <span data-en="Fix some code" data-om="Koodii sirreessi">Fix some code</span></button>
+          </div>
+        </div>
+      </section>
+      <div class="composer-wrap">
+        <div class="attachment-preview" id="attachmentPreview" hidden></div>
+        <form class="composer" id="chatForm">
+          <input id="fileInput" type="file" accept="image/*,.pdf,.txt" hidden>
+          <button type="button" class="attach-btn" id="attachBtn" title="Attach image or document">＋</button>
+          <textarea id="prompt" rows="1" data-en-placeholder="Message Supper AI..." data-om-placeholder="Supper AI gaafadhu..." placeholder="Message Supper AI..."></textarea>
+          <button type="button" id="micBtn" class="mic-btn" title="Speech to text">🎙</button>
+          <button type="submit" id="sendBtn" class="send-btn" aria-label="Send">↑</button>
+        </form>
+        <div class="disclaimer" data-en="AI can make mistakes. Check important information." data-om="AI dogoggoruu danda'a. Odeeffannoo barbaachisaa mirkaneessi.">AI can make mistakes. Check important information.</div>
+      </div>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
